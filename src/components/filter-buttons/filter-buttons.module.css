@@ -1,0 +1,37 @@
+.buttonStyle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 45px;
+    height: 40px;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+.selected {
+    width: 45px;
+    height: 40px;
+}
+
+.iconWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggleIcon {
+    position: absolute;
+}
+
+.typeIcon {
+    width: 16px;
+    height: 15px;
+    position: relative;
+    z-index: 2;
+}

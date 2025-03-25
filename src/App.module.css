@@ -1,0 +1,26 @@
+.wrapper {
+
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /*flex: 1 1 auto;*/
+}
+
+.container {
+    width: 100%;
+    max-width: 1218px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+    padding: 0 20px;
+}
+}

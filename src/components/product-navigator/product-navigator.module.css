@@ -1,0 +1,18 @@
+.navigateWrap {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.navigateContainer {
+
+}
+
+.title {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #e9e2bf;
+    margin-bottom: 32px;
+}
