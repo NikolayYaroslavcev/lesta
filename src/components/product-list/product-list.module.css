@@ -55,7 +55,7 @@
 
 .emptyState {
     width: 100%;
-    /*min-height: 68dvh;*/
+    min-height: 68dvh;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -34,11 +34,11 @@ export const ProductList = ({filteredProducts}: Props) => {
                 {filteredProducts.length ? (
                     <div className={styles.productListContainer}>
                         {filteredProducts.map((product, index) => (
-                            <ProductItem product={product} index={index}/>
+                            <ProductItem key={product.id} product={product} index={index}/>
                         ))}
                     </div>
                 ) : (
-                    <div className={styles.emptyState}>Ничего нет</div>
+                    <div className={styles.emptyState}>Нет техники данной категории</div>
                 )}
             </div>
 
