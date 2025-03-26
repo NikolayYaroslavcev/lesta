@@ -1,4 +1,4 @@
-import {useEffect, useRef} from "react";
+import {useEffect} from "react";
 import {ProductType} from "type/types.ts";
 import {useAppDispatch} from "hooks/use-dispatch.ts";
 import {setFilteredCount} from "app/filter-slice.ts";
@@ -13,7 +13,6 @@ interface Props {
 }
 
 export const ProductList = ({filteredProducts}: Props) => {
-    const ref = useRef<HTMLDivElement | null>(null);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -24,7 +23,7 @@ export const ProductList = ({filteredProducts}: Props) => {
         <>
             <ProductNavigator/>
 
-            <div ref={ref} className={styles.productListWrap}>
+            <div  className={styles.productListWrap}>
                 <span className={styles.spanTop}>
                      <ImageWrapper imageUrl="../../../public/images/shadow-top.png" altText="Shadow Top"/>
                 </span>

@@ -15,6 +15,7 @@ export default defineConfig({
             types: '/src/types',
             router: '/src/router',
             app: '/src/app',
+            animations: '/src/animations',
         }
     }
 

@@ -42,7 +42,10 @@
       ],
       "router/*": [
         "router/*"
-      ]
+      ],
+      "animations/*": [
+        "animations/*"
+      ],
 
     },
     /* Linting */
