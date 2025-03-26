@@ -27,8 +27,6 @@
 
 
 html {
-    /*width: 100vw;*/
-    /*overflow-x: hidden !important;*/
     height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -105,6 +103,8 @@ body {
     font-size: 14px;
     background: url('image/Shop-BG.webp') no-repeat center center / cover;
 }
+
+
 
 
 :root {

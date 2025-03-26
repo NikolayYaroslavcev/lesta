@@ -1,6 +1,6 @@
 .productListWrap {
     overflow: auto;
-    max-width: 1138px;
+    /*max-width: 1138px;*/
     width: 100%;
     margin: 0 auto;
     min-height: 68dvh;
@@ -9,6 +9,36 @@
     align-items: center;
     padding: 0 16px;
     position: relative;
+}
+
+
+.customScrollbar {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(62, 62, 62, 0.8) transparent;
+    z-index: 2;
+}
+
+
+.customScrollbar::-webkit-scrollbar {
+    width: 6px;
+    cursor: pointer;
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    height: 10px;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+    background-color: #a3835f;
+    border-radius: 3px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #8c6b4c;
 }
 
 
@@ -121,3 +151,4 @@
         padding: 12px;
     }
 }
+

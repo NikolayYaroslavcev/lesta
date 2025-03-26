@@ -23,12 +23,13 @@ export const ProductList = ({filteredProducts}: Props) => {
         <>
             <ProductNavigator/>
 
+
             {/*///вынсти тени в отдельный комонент и передать пропсом url*/}
 
             <span className={styles.spanTop}>
                     <img src="../../../public/images/shadow-top.png" alt=""/>
                 </span>
-            <div ref={ref} className={`${styles.productListWrap} custom-scrollbar`}>
+            <div ref={ref} className={`${styles.productListWrap} ${styles.customScrollbar}`}>
 
                 {filteredProducts.length ? (
                     <div className={styles.productListContainer}>
