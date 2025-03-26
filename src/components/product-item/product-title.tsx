@@ -1,12 +1,12 @@
 import styles from './product-item.module.css';
 import {Link} from "react-router-dom";
 
-interface ProductTitleProps {
+interface Props {
     title: string;
     premium: boolean;
 }
 
-export const ProductTitle = ({ title, premium }: ProductTitleProps) => {
+export const ProductTitle = ({ title, premium }: Props) => {
     const typeText = premium ? 'Ultimate' : 'Standard';
 
     return (

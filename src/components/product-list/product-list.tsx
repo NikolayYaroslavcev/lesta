@@ -7,11 +7,11 @@ import {useAppDispatch} from "hooks/use-dispatch.ts";
 import {setFilteredCount} from "app/filter-slice.ts";
 
 
-interface ProductListProps {
+interface Props {
     filteredProducts: ProductType[];
 }
 
-export const ProductList = ({filteredProducts}: ProductListProps) => {
+export const ProductList = ({filteredProducts}: Props) => {
     const ref = useRef<HTMLDivElement | null>(null);
     const dispatch = useAppDispatch();
 
