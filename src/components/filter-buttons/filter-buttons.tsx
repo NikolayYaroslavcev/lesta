@@ -1,27 +1,10 @@
 import styles from './filter-buttons.module.css';
-import HeavyTankIcon from '../../image/icons/show/type/heavyTank.svg?react';
-import MediumTankIcon from '../../image/icons/show/type/mediumTank.svg?react';
-import LightTankIcon from '../../image/icons/show/type/lightTank.svg?react';
-import ATSPGIcon from '../../image/icons/show/type/atSpg.svg?react';
-import SPGIcon from '../../image/icons/show/type/spg.svg?react';
+
 import ToggleOff from '../../image/icons/show/toggleoff.svg?react';
 import ToggleOn from '../../image/icons/show/toggleon.svg?react';
+import {TypeFilterButtonProps} from "../../type/types.ts";
+import {normalizeType, typeIcons} from "./constants.ts";
 
-interface TypeFilterButtonProps {
-    type: string;
-    isSelected: boolean;
-    onClick: () => void;
-}
-
-const normalizeType = (type: string) => type.toLowerCase().replace('-', '');
-
-const typeIcons = {
-    heavytank: HeavyTankIcon,
-    mediumtank: MediumTankIcon,
-    lighttank: LightTankIcon,
-    atspg: ATSPGIcon,
-    spg: SPGIcon,
-};
 
 export const FilterButton = ({type, isSelected, onClick}: TypeFilterButtonProps) => {
     const normalizedType = normalizeType(type);

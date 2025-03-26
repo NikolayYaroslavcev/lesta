@@ -1,12 +1,12 @@
 import styles from './product-item.module.css';
 
 interface Props {
-    image: string;
+    imagePatch: string;
     title: string;
 }
 
-export const ProductImage = ({image, title}: Props) => (
-    <img src={`/images/vehicles/${image}`} alt={title} className={styles.productImg}/>
+export const ProductImage = ({imagePatch, title}: Props) => (
+    <img src={`/images/vehicles/${imagePatch}`} alt={title} className={styles.productImg}/>
 );
 
 

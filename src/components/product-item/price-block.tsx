@@ -1,13 +1,14 @@
 import styles from './product-item.module.css';
-import { ProductType } from '../../type/types.ts';
+import {ProductType} from '../../type/types.ts';
+import {TOTAL_SETS} from "./constants.ts";
 
-interface PriceBlockProps {
+interface Props {
     product: ProductType;
     index: number;
 }
 
-export const PriceBlock = ({ product, index }: PriceBlockProps) => {
-    const hasOldPrice = product.old_price > 0 && index !== 0;
+export const PriceBlock = ({product, index}: Props) => {
+    const hasOldPrice = product.old_price && index !== 0;
     const priceText = `${product.price} USD`;
 
     return (
@@ -21,10 +22,10 @@ export const PriceBlock = ({ product, index }: PriceBlockProps) => {
                 <p className={styles.price}>{priceText}</p>
             )}
 
-            {index === 0 && (
+            {!index && (
                 <div className={styles.kitsBlock}>
                     <span>Всего наборов:</span>
-                    <p>3</p>
+                    <p>{TOTAL_SETS}</p>
                 </div>
             )}
         </div>

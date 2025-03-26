@@ -1,48 +1,35 @@
-import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import {NavLink} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 import {toggleCollectible, togglePremium} from "../../../app/filter-slice.ts";
-
 import styles from './Navigate.module.css';
-
+import {navItems} from "./constants.ts";
 
 export const Navigation = () => {
     const dispatch = useDispatch();
 
-    const handlePremiumClick = () => {
-        dispatch(togglePremium());
-        dispatch(toggleCollectible(false));
+    const changeFilterState = (params) => {
+        const {isPremium, isCollectible} = params;
+        dispatch(togglePremium(isPremium));
+        dispatch(toggleCollectible(isCollectible));
     };
 
-    const handleCollectibleClick = () => {
-        dispatch(toggleCollectible());
-        dispatch(togglePremium(false));
-    };
 
     return (
         <nav className={styles.nav}>
             <ul className={styles.navList}>
-                <li className={styles.navItem}>
-                    <NavLink
-                        to="/premium"
-                        className={({ isActive }) =>
-                            isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-                        }
-                        onClick={handlePremiumClick}
-                    >
-                        Премиальная
-                    </NavLink>
-                </li>
-                <li className={styles.navItem}>
-                    <NavLink
-                        to="/collectible"
-                        className={({ isActive }) =>
-                            isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
-                        }
-                        onClick={handleCollectibleClick}
-                    >
-                        Коллекционная
-                    </NavLink>
-                </li>
+                {navItems.map((item) => (
+                    <li key={item.to} className={styles.navItem}>
+                        <NavLink
+                            to={item.to}
+                            className={({isActive}) =>
+                                isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
+                            }
+                            onClick={() => changeFilterState(item.params)}
+                        >
+                            {item.label}
+                        </NavLink>
+                    </li>
+                ))}
             </ul>
         </nav>
     );

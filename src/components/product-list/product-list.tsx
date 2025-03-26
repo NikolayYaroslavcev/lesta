@@ -16,17 +16,20 @@ export const ProductList = ({filteredProducts}: ProductListProps) => {
 
     useEffect(() => {
         dispatch(setFilteredCount(filteredProducts.length));
-    }, [dispatch, filteredProducts]);
+    }, [filteredProducts]);
 
     return (
         <>
             <ProductNavigator/>
+
+            {/*///вынсти тени в отдельный комонент и передать пропсом url*/}
+
             <span className={styles.spanTop}>
                     <img src="../../../public/images/shadow-top.png" alt=""/>
                 </span>
             <div ref={ref} className={`${styles.productListWrap} custom-scrollbar`}>
 
-                {filteredProducts.length > 0 ? (
+                {filteredProducts.length ? (
                     <div className={styles.productListContainer}>
                         {filteredProducts.map((product, index) => (
                             <ProductItem product={product} index={index} key={product.id}/>

@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-
 import {setProducts, toggleSortDirection, toggleType} from "../../app/filter-slice.ts";
 import {ProductFilters} from "./product-filters/product-filters.tsx";
 
 import data from '../../data.json';
-import { RootState } from '../../app/store.ts';
-import { Navigation } from './navigation/navigation.tsx';
+import {RootState} from '../../app/store.ts';
+import {Navigation} from './navigation/navigation.tsx';
+
+import {useEffect} from 'react';
 
 import styles from './product-navigator.module.css';
 import {useSelector} from "react-redux";
@@ -18,7 +18,7 @@ export const ProductNavigator = () => {
 
     useEffect(() => {
         dispatch(setProducts(data?.data));
-    }, [dispatch]);
+    }, []);
 
     const {
         selectedTypes,
@@ -26,7 +26,6 @@ export const ProductNavigator = () => {
         filteredCount
     } = useSelector((state: RootState) => state.filter);
 
-    const vehicleTypes = VEHICLE_TYPES;
 
     const handleTypeChange = (type: string) => {
         dispatch(toggleType(type));
@@ -40,9 +39,9 @@ export const ProductNavigator = () => {
         <div className={styles.navigateWrap}>
             <div className={styles.navigateContainer}>
                 <h1 className={styles.title}>Техника</h1>
-                <Navigation />
+                <Navigation/>
                 <ProductFilters
-                    vehicleTypes={vehicleTypes}
+                    vehicleTypes={VEHICLE_TYPES}
                     selectedTypes={selectedTypes}
                     handleTypeChange={handleTypeChange}
                     handleSort={handleSort}

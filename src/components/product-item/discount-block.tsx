@@ -5,7 +5,7 @@ interface DiscountBlockProps {
 }
 
 export const DiscountBlock = ({ discount }: DiscountBlockProps) => {
-    if (discount <= 0) return null;
+    if (!discount) return null;
     return (
         <div className={styles.discount}>
             <span>-{discount}%</span>

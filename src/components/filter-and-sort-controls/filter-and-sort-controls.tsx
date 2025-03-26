@@ -1,16 +1,8 @@
 import {FilterButton} from "../filter-buttons/filter-buttons.tsx";
 import styles from "./filter-and-sort-controls.module.css";
 import TogglesIcon from '../../image/icons/toggles.svg?react';
+import {FilterAndSortProps} from "../../type/types.ts";
 
-
-interface Props {
-    vehicleTypes: string[];
-    selectedTypes: string[];
-    handleTypeChange: (type: string) => void;
-    handleSort: () => void;
-    sortDirection: string;
-    filteredCount: number;
-}
 
 export const FilterAndSortControls = (
     {
@@ -20,13 +12,13 @@ export const FilterAndSortControls = (
         handleSort,
         sortDirection,
         filteredCount,
-    }: Props) => (
+    }: FilterAndSortProps) => (
     <div className={styles.filterWrap}>
         <p className={styles.filterLang}>Показано: {filteredCount}</p>
         <div className={styles.sortWrap}>
             <button onClick={handleSort} className={styles.sortButton}>
                 Сортировать по цене:
-                <TogglesIcon className={sortDirection === 'desc' ? styles.iconRotated : ''} />
+                <TogglesIcon className={sortDirection === 'desc' ? styles.iconRotated : ''}/>
             </button>
 
             <div className={styles.show}>

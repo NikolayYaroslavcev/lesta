@@ -6,10 +6,13 @@ import { App } from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 
-import {CollectibleTab} from "./components/collectible-tab/collectible-tab.tsx";
 
-import {PremiumTab} from "./components/premium-tab/premium-tab.tsx";
+
+
 import {NotFoundPage} from "./components/not-found-page/not-found-page.tsx";
+
+import {Premium} from "../src/components/pages/premium/premium.tsx";
+import {Collectible} from "../src/components/pages/collectible/collectible.tsx";
 
 
 
@@ -19,8 +22,8 @@ const router = createBrowserRouter([
         element: <App />,
         children: [
             { index: true, element: <Navigate to="/premium" replace /> },
-            { path: 'premium', element: <PremiumTab /> },
-            { path: 'collectible', element: <CollectibleTab /> },
+            { path: 'premium', element: <Premium /> },
+            { path: 'collectible', element: <Collectible /> },
         ],
     },
     { path: '*', element: <NotFoundPage /> },

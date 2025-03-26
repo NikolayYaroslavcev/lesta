@@ -13,15 +13,17 @@ interface Props {
 
 export const ProductItem = ({product, index}: Props) => {
     const {discount, image, title, premium, description} = product;
-    const itemClass = index === 0 ? styles.firstItem : styles.productItem;
+    const itemClass = index ? styles.productItem : styles.firstItem;
+
+    if (!product) return null
 
     return (
         <div className={itemClass}>
             <DiscountBlock discount={discount}/>
-            <ProductImage image={image} title={title}/>
+            <ProductImage imagePatch={image} title={title}/>
             <div className={styles.info}>
                 <ProductTitle title={title} premium={premium}/>
-                {index !== 0 && <DescriptionBlock description={description}/>}
+                {!index && <DescriptionBlock description={description}/>}
                 <PriceBlock product={product} index={index}/>
             </div>
         </div>
