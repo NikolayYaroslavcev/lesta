@@ -7,8 +7,6 @@
 
 .filterLang {
     font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 14px;
     line-height: 129%;
     color: #fefeec;
     opacity: 0.7;
@@ -19,11 +17,15 @@
     display: flex;
     align-items: center;
     font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 14px;
     line-height: 129%;
     color: #fefeec;
     opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+}
+
+.sortButton:hover {
+    transform: scale(1.01);
+    color: var(--color-hover);
 }
 
 .sortWrap {
@@ -41,10 +43,6 @@
 }
 
 
-.iconRotated {
-    transform: rotate(180deg);
-}
-
 .show {
     display: flex;
     align-items: center;
@@ -52,10 +50,8 @@
 
 }
 
-.show p{
+.show p {
     font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 14px;
     line-height: 129%;
     color: #fefeec;
     opacity: 0.7;
@@ -64,6 +60,31 @@
 .buttonBlock {
     display: flex;
     align-items: center;
+}
+
+.toggleBlockIcon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 42px;
+}
+
+
+
+.toggleArrayIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 16px;
+    height: 16px;
+}
+
+.iconRotated {
+    transform: translate(-50%, -55%) rotate(180deg);
 }
 
 

@@ -1,6 +1,7 @@
 import styles from './product-item.module.css';
-import {ProductType} from '../../type/types.ts';
+
 import {TOTAL_SETS} from "./constants.ts";
+import {ProductType} from "type/types.ts";
 
 interface Props {
     product: ProductType;

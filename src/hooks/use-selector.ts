@@ -1,7 +1,7 @@
-import type { TypedUseSelectorHook } from 'react-redux';
-import {useSelector } from 'react-redux';
+import type {TypedUseSelectorHook} from 'react-redux';
+import {useSelector} from 'react-redux';
+import {RootState} from "app/store.ts";
 
-import {RootState} from "../app/store.ts";
 
 
 

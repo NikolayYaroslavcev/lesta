@@ -2,8 +2,9 @@ import styles from './filter-buttons.module.css';
 
 import ToggleOff from '../../image/icons/show/toggleoff.svg?react';
 import ToggleOn from '../../image/icons/show/toggleon.svg?react';
-import {TypeFilterButtonProps} from "../../type/types.ts";
-import {normalizeType, typeIcons} from "./constants.ts";
+import {TypeFilterButtonProps} from "type/types.ts";
+import {normalizeType, typeIcons} from "components/filter-buttons/constants.ts";
+
 
 
 export const FilterButton = ({type, isSelected, onClick}: TypeFilterButtonProps) => {

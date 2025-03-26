@@ -2,17 +2,16 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import './index.css';
-import { App } from './App';
-import { store } from './app/store';
 import { Provider } from 'react-redux';
+import {Premium} from "components/pages/premium/premium.tsx";
+import {Collectible} from "components/pages/collectible/collectible.tsx";
+import {NotFoundPage} from "components/not-found-page/not-found-page.tsx";
+import {store} from "app/store.ts";
+import {App} from "./App.tsx";
 
 
 
 
-import {NotFoundPage} from "./components/not-found-page/not-found-page.tsx";
-
-import {Premium} from "../src/components/pages/premium/premium.tsx";
-import {Collectible} from "../src/components/pages/collectible/collectible.tsx";
 
 
 

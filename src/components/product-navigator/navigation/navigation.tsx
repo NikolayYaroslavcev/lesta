@@ -1,8 +1,9 @@
 import {NavLink} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
-import {toggleCollectible, togglePremium} from "../../../app/filter-slice.ts";
+
 import styles from './Navigate.module.css';
 import {navItems} from "./constants.ts";
+import {toggleCollectible, togglePremium} from "app/filter-slice.ts";
 
 export const Navigation = () => {
     const dispatch = useDispatch();

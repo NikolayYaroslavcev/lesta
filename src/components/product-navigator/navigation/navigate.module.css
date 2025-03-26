@@ -18,23 +18,27 @@
 
 .navLink {
     font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 14px;
     text-align: center;
-    color: #e9e2bf;
+    color: var(--color-primary);
     text-decoration: none;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s, border-image 0.3s;
+    transition: all 0.3s;
     opacity: 0.4;
     border-radius: 1px;
+
+}
+
+.navLink:hover {
+    transform: scale(1.05);
+    color: var(--color-hover);
 }
 
 .navLink.active {
     opacity: 1;
     box-shadow: inset 0 0 0 1px rgba(255, 85, 0, 0.2);
-    background: rgba(0, 0, 0, 0.3) url(/src/image/backgruondButton.png) no-repeat center center;
+    background: var(--background-blur) url(/src/image/backgruondButton.png) no-repeat center center;
 }

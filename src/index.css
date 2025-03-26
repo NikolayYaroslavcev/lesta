@@ -100,10 +100,9 @@ h6 {
 body {
     overflow: hidden;
     margin: 0;
-    font-family: 'Gilroy', serif;
+    font-family: var(--font-family), serif;
     font-weight: 400;
-    font-size: 18px;
-    line-height: 1.4em;
+    font-size: 14px;
     background: url('image/Shop-BG.webp') no-repeat center center / cover;
 }
 
@@ -111,8 +110,13 @@ body {
 :root {
     --font-family: "Roboto Condensed", sans-serif;
     --second-family: "ZurichCond", sans-serif;
-    --color-text: #e9e2bf;
-    --color-bg: rgba(0, 0, 0, 0.3);
+    --color-primary: #e9e2bf;
+    --color-secondary: #cbac77;
+    --color-tertiary: #8c8c7e;
+    --color-hover: #d2b934;
+    --color-border: var(--color-border);
+
+    --background-blur: rgba(0, 0, 0, 0.3);
 }
 
 

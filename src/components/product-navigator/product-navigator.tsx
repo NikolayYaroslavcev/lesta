@@ -1,16 +1,18 @@
-import {setProducts, toggleSortDirection, toggleType} from "../../app/filter-slice.ts";
 import {ProductFilters} from "./product-filters/product-filters.tsx";
 
 import data from '../../data.json';
-import {RootState} from '../../app/store.ts';
+
 import {Navigation} from './navigation/navigation.tsx';
 
 import {useEffect} from 'react';
 
 import styles from './product-navigator.module.css';
-import {useSelector} from "react-redux";
-import {VEHICLE_TYPES} from "../../constants/vehicleTypes.ts";
-import {useAppDispatch} from "../../hooks/use-dispatch.ts";
+
+import {useAppDispatch} from "hooks/use-dispatch.ts";
+import {setProducts, toggleSortDirection, toggleType} from "app/filter-slice.ts";
+import {useAppSelector} from "hooks/use-selector.ts";
+import {VEHICLE_TYPES} from "constants/vehicleTypes.ts";
+
 
 export const ProductNavigator = () => {
     const dispatch = useAppDispatch();
@@ -24,7 +26,7 @@ export const ProductNavigator = () => {
         selectedTypes,
         sortDirection,
         filteredCount
-    } = useSelector((state: RootState) => state.filter);
+    } = useAppSelector((state) => state.filter);
 
 
     const handleTypeChange = (type: string) => {

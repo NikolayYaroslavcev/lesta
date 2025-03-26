@@ -1,8 +1,8 @@
-import {FilterButton} from "../filter-buttons/filter-buttons.tsx";
 import styles from "./filter-and-sort-controls.module.css";
-import TogglesIcon from '../../image/icons/toggles.svg?react';
-import {FilterAndSortProps} from "../../type/types.ts";
-
+import TogglesArrayIcon from "../../image/icons/tooglearrow.svg?react";
+import TogglesBlockIcon from "../../image/icons/togglesblock.svg?react";
+import {FilterAndSortProps} from "type/types.ts";
+import {FilterButton} from "components/filter-buttons/filter-buttons.tsx";
 
 export const FilterAndSortControls = (
     {
@@ -18,7 +18,12 @@ export const FilterAndSortControls = (
         <div className={styles.sortWrap}>
             <button onClick={handleSort} className={styles.sortButton}>
                 Сортировать по цене:
-                <TogglesIcon className={sortDirection === 'desc' ? styles.iconRotated : ''}/>
+                <span className={styles.toggleBlockIcon}>
+                    <TogglesBlockIcon/>
+                    <TogglesArrayIcon
+                        className={`${styles.toggleArrayIcon} ${sortDirection === "desc" ? styles.iconRotated : ""}`}
+                    />
+                </span>
             </button>
 
             <div className={styles.show}>

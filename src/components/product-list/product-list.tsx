@@ -2,9 +2,10 @@ import {ProductItem} from "../product-item/product-item.tsx";
 import {ProductNavigator} from "../product-navigator/product-navigator.tsx";
 import styles from "../product-list/product-list.module.css";
 import {useEffect, useRef} from "react";
-import {ProductType} from "../../type/types.ts";
-import {useAppDispatch} from "../../hooks/use-dispatch.ts";
-import {setFilteredCount} from "../../app/filter-slice.ts";
+import {ProductType} from "type/types.ts";
+import {useAppDispatch} from "hooks/use-dispatch.ts";
+import {setFilteredCount} from "app/filter-slice.ts";
+
 
 interface ProductListProps {
     filteredProducts: ProductType[];
