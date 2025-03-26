@@ -1,4 +1,4 @@
-import styles from './product-item.module.css';
+import styles from 'components/product-item/product-item.module.css';
 
 interface Props {
     imagePatch: string;

@@ -1,4 +1,4 @@
-import styles from './product-item.module.css';
+import styles from 'components/product-item/product-item.module.css';
 import {DiscountBlock} from "./discount-block.tsx";
 import {ProductImage} from "./product-image.tsx";
 import {ProductTitle} from "./product-title.tsx";

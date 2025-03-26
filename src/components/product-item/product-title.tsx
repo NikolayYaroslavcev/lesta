@@ -1,4 +1,4 @@
-import styles from './product-item.module.css';
+import styles from 'components/product-item/product-item.module.css';
 import {Link} from "react-router-dom";
 
 interface Props {

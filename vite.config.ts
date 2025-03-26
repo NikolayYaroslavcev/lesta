@@ -13,6 +13,7 @@ export default defineConfig({
             pages: '/src/pages',
             store: '/src/app/store',
             types: '/src/types',
+            router: '/src/router',
             app: '/src/app',
         }
     }

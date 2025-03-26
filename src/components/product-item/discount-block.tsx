@@ -1,10 +1,10 @@
-import styles from './product-item.module.css';
+import styles from 'components/product-item/product-item.module.css';
 
 interface Props {
     discount: number;
 }
 
-export const DiscountBlock = ({ discount }: Props) => {
+export const DiscountBlock = ({discount}: Props) => {
     if (!discount) return null;
     return (
         <div className={styles.discount}>

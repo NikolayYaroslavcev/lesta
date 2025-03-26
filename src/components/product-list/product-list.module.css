@@ -1,9 +1,6 @@
 .productListWrap {
-    overflow: auto;
-    /*max-width: 1138px;*/
     width: 100%;
     margin: 0 auto;
-    /*min-height: 68dvh;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +10,6 @@
 
 
 .customScrollbar {
-    overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(62, 62, 62, 0.8) transparent;
     z-index: 2;
@@ -43,6 +39,7 @@
 
 
 .productListContainer {
+    overflow: auto;
     max-height: 68dvh;
     padding: 23px 41px 0 41px;
     display: grid;
@@ -67,7 +64,7 @@
 
 .spanTop {
     position: absolute;
-    top: 130px;
+    top: -45px;
 }
 
 .spanTop img {
@@ -76,8 +73,7 @@
 
 .spanBottom {
     position: absolute;
-    /*bottom: 10px;*/
-    bottom: 0;
+    bottom: -45px;
 }
 
 .spanBottom img {
@@ -91,8 +87,8 @@
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: auto;
         gap: 16px;
-        justify-items: center; /* Выравнивание по горизонтали */
-        align-items: center;   /* Выравнивание по вертикали */
+        justify-items: center;
+        align-items: center;
     }
 
     .firstItem {
@@ -105,7 +101,6 @@
         height: auto;
     }
 }
-
 
 
 @media (max-width: 768px) {
@@ -136,6 +131,16 @@
     }
 }
 
+
+@media (max-width: 1133px) {
+    .spanTop {
+        top: -27px;
+    }
+
+    .spanBottom {
+        bottom: -30px;
+    }
+}
 
 @media (max-width: 480px) {
     .productListContainer {

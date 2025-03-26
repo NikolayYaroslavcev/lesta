@@ -1,11 +1,12 @@
-import styles from "../product-list/product-list.module.css";
 import {useEffect, useRef} from "react";
 import {ProductType} from "type/types.ts";
 import {useAppDispatch} from "hooks/use-dispatch.ts";
 import {setFilteredCount} from "app/filter-slice.ts";
 import {ProductItem} from "components/product-item/product-item.tsx";
 import {ProductNavigator} from "components/product-navigator/product-navigator.tsx";
+import {ImageWrapper} from "./ImageWrapper.tsx";
 
+import styles from "components/product-list/product-list.module.css";
 
 interface Props {
     filteredProducts: ProductType[];
@@ -23,16 +24,13 @@ export const ProductList = ({filteredProducts}: Props) => {
         <>
             <ProductNavigator/>
 
-            {/*изображение походу можно не обсолютить, можно просто оберазать по уже*/}
-            {/* так же нужно сделать отельную комопненту для spanTop и spanBottom  и пропсами предавать юрл картинки*/}
+            <div ref={ref} className={styles.productListWrap}>
+                <span className={styles.spanTop}>
+                     <ImageWrapper imageUrl="../../../public/images/shadow-top.png" altText="Shadow Top"/>
+                </span>
 
-            <span className={styles.spanTop}>
-                <img src="../../../public/images/shadow-top.png" alt=""/>
-            </span>
-
-            <div ref={ref} className={`${styles.productListWrap} ${styles.customScrollbar}`}>
                 {filteredProducts.length ? (
-                    <div className={styles.productListContainer}>
+                    <div className={`${styles.productListContainer} ${styles.customScrollbar}`}>
                         {filteredProducts.map((product, index) => (
                             <ProductItem key={product.id} product={product} index={index}/>
                         ))}
@@ -40,11 +38,11 @@ export const ProductList = ({filteredProducts}: Props) => {
                 ) : (
                     <div className={styles.emptyState}>Нет техники данной категории</div>
                 )}
-            </div>
 
-            <span className={styles.spanBottom}>
-                <img src="../../../public/images/shadow-bottom.png" alt=""/>
-            </span>
+                <span className={styles.spanBottom}>
+                     <ImageWrapper imageUrl="../../../public/images/shadow-bottom.png" altText="Shadow Bottom"/>
+                </span>
+            </div>
         </>
     );
 };

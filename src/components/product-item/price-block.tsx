@@ -1,6 +1,6 @@
-import styles from './product-item.module.css';
+import styles from 'components/product-item/product-item.module.css';
 
-import {TOTAL_SETS} from "./constants.ts";
+import {CURRENCY, TOTAL_SETS} from "./constants.ts";
 import {ProductType} from "type/types.ts";
 
 interface Props {
@@ -9,14 +9,15 @@ interface Props {
 }
 
 export const PriceBlock = ({product, index}: Props) => {
-    const hasOldPrice = product.old_price && index !== 0;
-    const priceText = `${product.price} USD`;
+    const {old_price, price} = product;
+    const isOldPriceVisible = old_price && old_price !== price && index;
+    const priceText = `${price} ${CURRENCY}`;
 
     return (
         <div className={styles.infoBlock}>
-            {hasOldPrice ? (
+            {isOldPriceVisible ? (
                 <div className={styles.oldPriceBlock}>
-                    <p className={styles.oldPrice}>{product.old_price}</p>
+                    <p className={styles.oldPrice}>{product.old_price} {CURRENCY}</p>
                     <p className={styles.price}>{priceText}</p>
                 </div>
             ) : (
