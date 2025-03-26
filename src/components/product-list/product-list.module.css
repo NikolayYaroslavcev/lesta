@@ -3,7 +3,7 @@
     /*max-width: 1138px;*/
     width: 100%;
     margin: 0 auto;
-    min-height: 68dvh;
+    /*min-height: 68dvh;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +55,7 @@
 
 .emptyState {
     width: 100%;
-    min-height: 68dvh;
+    /*min-height: 68dvh;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,8 @@
 
 .spanBottom {
     position: absolute;
-    bottom: 20px;
+    /*bottom: 10px;*/
+    bottom: 0;
 }
 
 .spanBottom img {
@@ -86,9 +87,12 @@
 
 @media (max-width: 1164px) {
     .productListContainer {
+        display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: auto;
         gap: 16px;
+        justify-items: center; /* Выравнивание по горизонтали */
+        align-items: center;   /* Выравнивание по вертикали */
     }
 
     .firstItem {
@@ -101,6 +105,7 @@
         height: auto;
     }
 }
+
 
 
 @media (max-width: 768px) {

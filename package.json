@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
+    "gsap": "^3.12.7",
+    "motion": "^12.6.0",
     "react": "^19.0.0",
     "react-css-modules": "^4.7.11",
     "react-dom": "^19.0.0",

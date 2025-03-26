@@ -1,11 +1,10 @@
-import {useAppSelector} from "../hooks/use-selector.ts";
-import {RootState} from "../app/store.ts";
+import {useAppSelector} from "hooks/use-selector.ts";
+import {RootState} from "app/store.ts";
 
 export const useFilteredAndSortedProducts = (isPremium: boolean) => {
-    const { selectedTypes, sortDirection, products} = useAppSelector(
+    const {selectedTypes, sortDirection, products} = useAppSelector(
         (state: RootState) => state.filter
     );
-
 
 
     let filteredProducts = products;
@@ -16,7 +15,7 @@ export const useFilteredAndSortedProducts = (isPremium: boolean) => {
 
 
     if (isPremium) {
-        filteredProducts = filteredProducts.filter(product => product.premium );
+        filteredProducts = filteredProducts.filter(product => product.premium);
     } else {
         filteredProducts = filteredProducts.filter(product => !product.premium);
     }
